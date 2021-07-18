@@ -1,0 +1,35 @@
+<div class="col-md-8 offset-md-2">
+    <h2 class="test-center">Customer Edit</h2>
+    <div *ngIf="msg" class="alert alert-success">{{msg}}</div>
+    <div *ngIf="errormsg" class="alert alert-danger">{{errormsg}}</div>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="form-group">
+            <label id="cfirstName">Customer First Name</label>
+            <input class="form-control" name="firstName" #firstName="ngModel" required [(ngModel)]="customer.firstName" id="cfirstName">
+            <div [ngStyle]="{'display':(firstName.touched && firstName.invalid) ? 'block':'none'}" class="invalid-feedback">Customer First Name is mandatory </div>
+        </div>
+        <div class="form-group mt-3">
+            <label id="clastName">Customer Last Name</label>
+            <input class="form-control" name="lastName" #lastName="ngModel" required [(ngModel)]="customer.lastName" id="clastName">
+            <div [ngStyle]="{'display':(lastName.touched && lastName.invalid) ? 'block':'none'}" class="invalid-feedback">Customer Last Name is mandatory </div>
+        </div>
+        <div class="form-group mt-3">
+            <label id="cemailId">Customer Email Id</label>
+            <input type="email" class="form-control" name="emailId" #emailId="ngModel" required [(ngModel)]="customer.emailId" id="cemailId">
+            <div [ngStyle]="{'display':(emailId.touched && emailId.invalid) ? 'block':'none'}" class="invalid-feedback">Customer Email Id is mandatory </div>
+        </div>
+        <div class="form-group mt-3">
+            <label id="cmobileNumber">Customer Mobile Number</label>
+            <input class="form-control" name="mobileNumber" #mobileNumber="ngModel" required [(ngModel)]="customer.mobileNumber" id="cmobileNumber">
+            <div [ngStyle]="{'display':(mobileNumber.touched && mobileNumber.invalid) ? 'block':'none'}" class="invalid-feedback">Customer Mobile number is mandatory </div>
+        </div>
+        <div class="form-group mt-3">
+            <label id="caddress">Customer Address</label>
+            <input class="form-control" name="address" #address="ngModel" required [(ngModel)]="customer.address" id="caddress">
+            <div [ngStyle]="{'display':(address.touched && address.invalid) ? 'block':'none'}" class="invalid-feedback">Customer Address is mandatory </div>
+        </div>
+        <div class="form-group my-3">
+            <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="!form.valid">Submit</button>
+        </div>
+    </form>
+</div>
