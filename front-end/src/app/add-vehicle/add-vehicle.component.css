@@ -1,0 +1,19 @@
+.form-control {
+  width: 100%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+  
+  .form-controlm:focus {
+    border: 3px solid #555;
+  }
+  .test-center{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:rgb(255, 154, 71);
+  }
+  

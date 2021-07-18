@@ -1,0 +1,78 @@
+<h2 class="test-center">Add Vehicle</h2>
+<div *ngIf="msg != undefined" class="alert alert-success">{{msg}}</div>
+<div *ngIf="errormsg != undefined" class="alert alert-danger">{{errormsg}}</div>
+<form #vehiclefrm="ngForm">
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+
+            <label for="exampleFormControlInput1">Vehicle Id</label>
+            <input  type="number" class="form-control" name="vid" #vid="ngModel" required [(ngModel)]="vehicleDto.vehicleId " id="exampleFormControlInput">
+            <div *ngIf="vid.touched && vid.invalid" class="alert alert-danger">Vehicle Id is mandatory </div>
+
+        </div>
+    </ul>
+    <ul class="col-md-8 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Vehicle Number</label>
+            <input type="text" class="form-control" name="vname" #vname="ngModel" required [(ngModel)]="vehicleDto.vehicleNumber " id="exampleFormControlInput">
+            <div *ngIf="vname.touched && vname.invalid" class="alert alert-danger">vehicleId is mandatory </div>
+
+        </div>
+        
+    </ul>
+    <ul class="col-md-8 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Type</label>
+            <select class="form-control" name="vtype" #vtype="ngModel" required [(ngModel)]="vehicleDto.type " id="exampleFormControlInput">
+                <option value="car">car</option>
+                <option value="bus">bus</option>
+                  </select>
+        </div>
+    </ul>
+    <ul class="col-md-8 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Category</label>
+            <select class="form-control" name="vcat" #vcat="ngModel" required [(ngModel)]="vehicleDto.category " id="exampleFormControlInput">
+                <option value="AC">AC</option>
+                <option value="NON-AC">NON-AC</option>
+                  </select>
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Description</label>
+            <input type="text" class="form-control" name="vdesc" #vdesc="ngModel" required [(ngModel)]="vehicleDto.description " id="exampleFormControlInput">
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Location</label>
+            <input type="text" class="form-control" name="vloc" #vloc="ngModel" required [(ngModel)]="vehicleDto.location "  id="exampleFormControlInput">
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Capacity</label>
+            <input type="number" class="form-control" name="vcap" #vcap="ngModel" required [(ngModel)]="vehicleDto.capacity " id="exampleFormControlInput">
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Charges Per KM</label>
+            <input type="number" class="form-control" name="vchar" #vchar="ngModel" min="1" [(ngModel)]="vehicleDto.chargesPerKM "  id="exampleFormControlInput">
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Fixed Charges</label>
+            <input type="number" class="form-control" name="vfix" #vfix="ngModel" min="1" [(ngModel)]="vehicleDto.fixedCharges "  id="exampleFormControlInput">
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        
+            <button class=" w-100 btn btn-primary btn-lg" type="submit" [disabled]="!vehiclefrm.valid" (click)="addVehicle()">Submit</button>
+        
+    </ul>
+</form>
+
+
