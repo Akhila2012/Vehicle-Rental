@@ -1,0 +1,30 @@
+
+<h2> Vehicle Booking</h2>
+<div class="alert alert-success" *ngIf="msg != undefined"> {{msg}}</div>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Vehicle Number</th>
+            <th> Type </th>
+            <th> Category</th>
+            <th> Capacity </th>
+            <th> Charge per KM</th>
+            <th> Fixed Charges</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let vehicle of vehicles" >
+            <td> {{ vehicle.vehicleNumber }} </td>
+            <td> {{ vehicle.type }} </td>
+            <td> {{ vehicle.category }} </td>          
+            <td> {{ vehicle.capacity }} </td>
+            <td> {{ vehicle.chargesPerKM }} </td>
+            <td> {{ vehicle.fixedCharges }} </td>
+            <td>
+                <button routerLink="/addBooking/{{vehicle.vehicleId}}" class = "btn btn-info"> Book</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
