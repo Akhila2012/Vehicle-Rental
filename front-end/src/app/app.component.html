@@ -1,0 +1,22 @@
+
+<h1 class="text-center bg-info p-5"> {{title}} </h1>
+<nav class="col-8 mx-auto bg-dark p-2">
+    <a [routerLink]="['home']" class="m-2 text-white">Home</a>
+    <a routerLink="customer" class="m-2 text-white">Customer List</a>
+    <a routerLink="add-vehicle"  class="m-2 text-white" > Add Vehicle</a>
+    <a routerLink="vehicles"  class="m-2 text-white" > Vehicles List</a>
+    <a routerLink="book-vehicle"  class="m-2 text-white" > Make Booking</a>
+    <a routerLink="view-bookings"  class="m-2 text-white" > View Bookings</a>
+
+    
+
+
+</nav>
+
+<div class = "container">
+    <router-outlet></router-outlet>
+
+  
+
+
+ 
