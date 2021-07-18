@@ -1,0 +1,23 @@
+<h2> Booking List</h2>
+<div class="alert alert-success" *ngIf="msg != undefined"> {{msg}}</div>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> BookingId</th>
+            <th> Booking Date </th>
+            <th> Booked Till Date</th>
+            <th> Booking Description</th>
+            <th> Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let booking of bookings" >
+            <td> {{ booking.bookingId }} </td>
+            <td> {{ booking.bookingDate }} </td>
+            <td> {{ booking.bookedTillDate }} </td>
+            <td> {{ booking.bookingDescription }} </td>
+            <td> {{ booking.distance }} </td>
+        </tr>
+    </tbody>
+</table>
+
