@@ -1,0 +1,34 @@
+
+<h2> Vehicle List</h2>
+<div class="alert alert-success" *ngIf="msg != undefined"> {{msg}}</div>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Vehicle Number</th>
+            <th> Type </th>
+            <th> Category</th>
+            <th> Description</th>
+            <th> Location</th>
+            <th> Capacity </th>
+            <th> Charge per KM</th>
+            <th> Fixed Charges</th>
+            <th>Actions</th>>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let vehicle of vehicles" >
+            <td> {{ vehicle.vehicleNumber }} </td>
+            <td> {{ vehicle.type }} </td>
+            <td> {{ vehicle.category }} </td>
+            <td> {{ vehicle.description }} </td>
+            <td> {{ vehicle.location }} </td>
+            <td> {{ vehicle.capacity }} </td>
+            <td> {{ vehicle.chargesPerKM }} </td>
+            <td> {{ vehicle.fixedCharges }} </td>
+            <td>
+                <button (click) = "deleteVehicle(vehicle.vehicleId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
