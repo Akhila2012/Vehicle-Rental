@@ -1,0 +1,48 @@
+<h2 class="test-center">Make Booking</h2>
+<div *ngIf="msg != undefined" class="alert alert-success">{{msg}}</div>
+<div *ngIf="errormsg != undefined" class="alert alert-danger">{{errormsg}}</div>
+<form #bookfrm="ngForm">
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Customer Id</label>
+            <input type="number" class="form-control" name="cid" #cid="ngModel" required [(ngModel)]="bookingDto.customerId " id="exampleFormControlInput">
+            <div *ngIf="cid.touched && cid.invalid" class="alert alert-danger">Customer Id is mandatory </div>
+        </div>
+        
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Booking Date</label>
+            <input type="date" class="form-control" name="bdate" #bdate="ngModel" required [(ngModel)]="bookingDto.bookingDate " id="exampleFormControlInput">
+            <div *ngIf="bdate.touched && bdate.invalid" class="alert alert-danger">Booking Date is mandatory </div>
+        </div>
+        
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Booked Till Date</label>
+            <input type="date" class="form-control" name="btill" #btill="ngModel" required [(ngModel)]="bookingDto.bookedTillDate " id="exampleFormControlInput">
+            <div *ngIf="btill.touched && btill.invalid" class="alert alert-danger">Booking Till Date is mandatory </div>
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Booking Description</label>
+            <input type="text" class="form-control" name="bdesc" #bdesc="ngModel" required [(ngModel)]="bookingDto.bookingDescription " id="exampleFormControlInput">
+            <div *ngIf="bdesc.touched && bdesc.invalid" class="alert alert-danger">Booking description is mandatory </div>
+        </div>
+    </ul>
+    <ul class="col-md-7 col-lg-8">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Distance</label>
+            <input type="number" class="form-control" name="bdist" #bdist="ngModel" required [(ngModel)]="bookingDto.distance" id="exampleFormControlInput">
+            <div *ngIf="bdist.touched && bdist.invalid" class="alert alert-danger">Distance is mandatory </div>
+        </div>
+    </ul>
+  
+    
+    <ul class="col-md-7 col-lg-8">
+            <button class=" w-100 btn btn-primary btn-lg" type="submit" [disabled]="!bookfrm.valid" (click)="addBooking()">BOOK</button>
+        
+    </ul>
+</form>
